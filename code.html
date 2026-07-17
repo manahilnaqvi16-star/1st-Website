@@ -1,0 +1,474 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Flavor Haven | Exquisite Dining Experience</title>
+<!-- Google Fonts: Playfair Display for headlines, Inter for body -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols for Iconography -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-tint": "#ffb95f",
+                    "secondary-container": "#af8d11",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary-container": "#b2b0b0",
+                    "primary-container": "#f59e0b",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary-container": "#444343",
+                    "surface-container-highest": "#353534",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-surface-variant": "#d8c3ad",
+                    "background": "#131313",
+                    "tertiary": "#cecccb",
+                    "on-error-container": "#ffdad6",
+                    "surface-bright": "#3a3939",
+                    "surface-dim": "#131313",
+                    "outline-variant": "#534434",
+                    "on-primary": "#472a00",
+                    "on-secondary-fixed-variant": "#574500",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary-fixed-variant": "#653e00",
+                    "secondary-fixed": "#ffe088",
+                    "primary": "#ffc174",
+                    "surface-container": "#201f1f",
+                    "on-secondary-container": "#342800",
+                    "secondary": "#e9c349",
+                    "inverse-on-surface": "#313030",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#ffddb8",
+                    "inverse-primary": "#855300",
+                    "inverse-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#ffb95f",
+                    "surface": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "on-primary-container": "#613b00",
+                    "on-primary-fixed": "#2a1700",
+                    "surface-variant": "#353534",
+                    "outline": "#a08e7a",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error": "#690005",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary": "#313030",
+                    "on-secondary": "#3c2f00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "container-max": "1280px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "stack-lg": "32px",
+                    "section-padding": "100px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html { scroll-behavior: smooth; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .accent-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #d4af37 100%);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}[type='text'],input:where(:not([type])),[type='email'],[type='url'],[type='password'],[type='number'],[type='date'],[type='datetime-local'],[type='month'],[type='search'],[type='tel'],[type='time'],[type='week'],[multiple],textarea,select{-webkit-appearance:none;appearance:none;background-color:#fff;border-color:#6b7280;border-width:1px;border-radius:0px;padding-top:0.5rem;padding-right:0.75rem;padding-bottom:0.5rem;padding-left:0.75rem;font-size:1rem;line-height:1.5rem;--tw-shadow:0 0 #0000;}[type='text']:focus, input:where(:not([type])):focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);border-color:#2563eb}input::placeholder,textarea::placeholder{color:#6b7280;opacity:1}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-date-and-time-value{min-height:1.5em;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit,::-webkit-datetime-edit-year-field,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute-field,::-webkit-datetime-edit-second-field,::-webkit-datetime-edit-millisecond-field,::-webkit-datetime-edit-meridiem-field{padding-top:0;padding-bottom:0}select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;print-color-adjust:exact}[multiple],[size]:where(select:not([size="1"])){background-image:initial;background-position:initial;background-repeat:unset;background-size:initial;padding-right:0.75rem;print-color-adjust:unset}[type='checkbox'],[type='radio']{-webkit-appearance:none;appearance:none;padding:0;print-color-adjust:exact;display:inline-block;vertical-align:middle;background-origin:border-box;-webkit-user-select:none;user-select:none;flex-shrink:0;height:1rem;width:1rem;color:#2563eb;background-color:#fff;border-color:#6b7280;border-width:1px;--tw-shadow:0 0 #0000}[type='checkbox']{border-radius:0px}[type='radio']{border-radius:100%}[type='checkbox']:focus,[type='radio']:focus{outline:2px solid transparent;outline-offset:2px;--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:2px;--tw-ring-offset-color:#fff;--tw-ring-color:#2563eb;--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)}[type='checkbox']:checked,[type='radio']:checked{border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat}[type='checkbox']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='checkbox']:checked{-webkit-appearance:auto;appearance:auto}}[type='radio']:checked{background-image:url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");}@media (forced-colors: active) {[type='radio']:checked{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:checked:hover,[type='checkbox']:checked:focus,[type='radio']:checked:hover,[type='radio']:checked:focus{border-color:transparent;background-color:currentColor}[type='checkbox']:indeterminate{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8h8'/%3e%3c/svg%3e");border-color:transparent;background-color:currentColor;background-size:100% 100%;background-position:center;background-repeat:no-repeat;}@media (forced-colors: active) {[type='checkbox']:indeterminate{-webkit-appearance:auto;appearance:auto}}[type='checkbox']:indeterminate:hover,[type='checkbox']:indeterminate:focus{border-color:transparent;background-color:currentColor}[type='file']{background:unset;border-color:inherit;border-width:0;border-radius:0;padding:0;font-size:unset;line-height:inherit}[type='file']:focus{outline:1px solid ButtonText;outline:1px auto -webkit-focus-ring-color}.pointer-events-none{pointer-events:none}.visible{visibility:visible}.invisible{visibility:hidden}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-10{bottom:2.5rem}.bottom-8{bottom:2rem}.left-0{left:0px}.left-1\/2{left:50%}.right-8{right:2rem}.top-0{top:0px}.z-0{z-index:0}.z-10{z-index:10}.z-50{z-index:50}.col-span-2{grid-column:span 2 / span 2}.row-span-2{grid-row:span 2 / span 2}.mx-auto{margin-left:auto;margin-right:auto}.mb-10{margin-bottom:2.5rem}.mb-12{margin-bottom:3rem}.mb-16{margin-bottom:4rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-10{margin-top:2.5rem}.mt-16{margin-top:4rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-12{height:3rem}.h-20{height:5rem}.h-64{height:16rem}.h-\[600px\]{height:600px}.h-\[884px\]{height:884px}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-container-max{max-width:1280px}.max-w-sm{max-width:24rem}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.auto-rows-\[250px\]{grid-auto-rows:250px}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-16{gap:4rem}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-stack-lg{gap:32px}.gap-stack-md{gap:16px}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-b-2{border-bottom-width:2px}.border-t{border-top-width:1px}.border-primary{--tw-border-opacity:1;border-color:rgb(255 193 116 / var(--tw-border-opacity, 1))}.border-primary\/30{border-color:rgb(255 193 116 / 0.3)}.border-secondary{--tw-border-opacity:1;border-color:rgb(233 195 73 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.border-white\/30{border-color:rgb(255 255 255 / 0.3)}.border-white\/5{border-color:rgb(255 255 255 / 0.05)}.bg-background{--tw-bg-opacity:1;background-color:rgb(19 19 19 / var(--tw-bg-opacity, 1))}.bg-black\/60{background-color:rgb(0 0 0 / 0.6)}.bg-primary{--tw-bg-opacity:1;background-color:rgb(255 193 116 / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(255 193 116 / 0.1)}.bg-primary\/20{background-color:rgb(255 193 116 / 0.2)}.bg-surface-container{--tw-bg-opacity:1;background-color:rgb(32 31 31 / var(--tw-bg-opacity, 1))}.bg-surface-container-low{--tw-bg-opacity:1;background-color:rgb(28 27 27 / var(--tw-bg-opacity, 1))}.bg-surface-container-lowest{--tw-bg-opacity:1;background-color:rgb(14 14 14 / var(--tw-bg-opacity, 1))}.bg-surface\/80{background-color:rgb(19 19 19 / 0.8)}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.object-cover{object-fit:cover}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-stack-lg{padding:32px}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.px-gutter{padding-left:24px;padding-right:24px}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-section-padding{padding-top:100px;padding-bottom:100px}.pb-1{padding-bottom:0.25rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.font-body-lg{font-family:Inter}.font-body-md{font-family:Inter}.font-display-lg{font-family:Playfair Display}.font-headline-md{font-family:Playfair Display}.font-headline-sm{font-family:Playfair Display}.font-label-caps{font-family:Inter}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-body-lg{font-size:18px;line-height:1.6;font-weight:400}.text-body-md{font-size:16px;line-height:1.6;font-weight:400}.text-display-lg-mobile{font-size:40px;line-height:1.2;font-weight:700}.text-headline-md{font-size:32px;line-height:1.3;font-weight:600}.text-headline-sm{font-size:24px;line-height:1.4;font-weight:600}.text-label-caps{font-size:12px;line-height:1.2;letter-spacing:0.1em;font-weight:600}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tracking-widest{letter-spacing:0.1em}.text-on-background{--tw-text-opacity:1;color:rgb(229 226 225 / var(--tw-text-opacity, 1))}.text-on-primary-container{--tw-text-opacity:1;color:rgb(97 59 0 / var(--tw-text-opacity, 1))}.text-on-surface{--tw-text-opacity:1;color:rgb(229 226 225 / var(--tw-text-opacity, 1))}.text-on-surface-variant{--tw-text-opacity:1;color:rgb(216 195 173 / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(255 193 116 / var(--tw-text-opacity, 1))}.text-secondary{--tw-text-opacity:1;color:rgb(233 195 73 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.opacity-40{opacity:0.4}.opacity-100{opacity:1}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-primary\/10{--tw-shadow-color:rgb(255 193 116 / 0.1);--tw-shadow:var(--tw-shadow-colored)}.shadow-primary\/20{--tw-shadow-color:rgb(255 193 116 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-inset{--tw-ring-inset:inset}.ring-white\/10{--tw-ring-color:rgb(255 255 255 / 0.1)}.grayscale{--tw-grayscale:grayscale(100%);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.selection\:bg-primary *::selection{--tw-bg-opacity:1;background-color:rgb(255 193 116 / var(--tw-bg-opacity, 1))}.selection\:text-on-primary *::selection{--tw-text-opacity:1;color:rgb(71 42 0 / var(--tw-text-opacity, 1))}.selection\:bg-primary::selection{--tw-bg-opacity:1;background-color:rgb(255 193 116 / var(--tw-bg-opacity, 1))}.selection\:text-on-primary::selection{--tw-text-opacity:1;color:rgb(71 42 0 / var(--tw-text-opacity, 1))}.hover\:scale-105:hover{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:gap-3:hover{gap:0.75rem}.hover\:border-primary\/50:hover{border-color:rgb(255 193 116 / 0.5)}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(255 193 116 / var(--tw-bg-opacity, 1))}.hover\:bg-secondary:hover{--tw-bg-opacity:1;background-color:rgb(233 195 73 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/10:hover{background-color:rgb(255 255 255 / 0.1)}.hover\:text-on-primary:hover{--tw-text-opacity:1;color:rgb(71 42 0 / var(--tw-text-opacity, 1))}.hover\:text-on-secondary:hover{--tw-text-opacity:1;color:rgb(60 47 0 / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(255 193 116 / var(--tw-text-opacity, 1))}.hover\:opacity-100:hover{opacity:1}.hover\:opacity-90:hover{opacity:0.9}.hover\:shadow-2xl:hover{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:shadow-primary\/5:hover{--tw-shadow-color:rgb(255 193 116 / 0.05);--tw-shadow:var(--tw-shadow-colored)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-primary:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(255 193 116 / var(--tw-ring-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:inline-flex{display:inline-flex}.sm\:flex-row{flex-direction:row}}@media (min-width: 768px){.md\:col-span-2{grid-column:span 2 / span 2}.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:text-display-lg{font-size:64px;line-height:1.1;letter-spacing:-0.02em;font-weight:700}.md\:text-headline-md{font-size:32px;line-height:1.3;font-weight:600}.md\:text-headline-sm{font-size:24px;line-height:1.4;font-weight:600}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary" data-mode="connect">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-white/10 shadow-sm">
+<nav class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="text-headline-sm font-headline-md font-bold text-primary">Flavor Haven</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="nav-link font-body-md text-on-surface" href="#home">Home</a>
+<a class="nav-link hover:text-primary transition-colors duration-300 font-body-md text-on-surface" href="#about">About</a>
+<a class="nav-link hover:text-primary transition-colors duration-300 font-body-md text-on-surface" href="#menu">Menu</a>
+<a class="nav-link hover:text-primary transition-colors duration-300 font-body-md text-primary border-b-2 border-primary pb-1" href="#gallery">Gallery</a>
+<a class="nav-link hover:text-primary transition-colors duration-300 font-body-md text-on-surface" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="hidden sm:inline-flex px-6 py-2 border border-secondary text-secondary rounded-full font-label-caps hover:bg-secondary hover:text-on-secondary transition-all" href="#menu">View Menu</a>
+<a class="px-6 py-2 accent-gradient text-on-primary-container rounded-full font-label-caps hover:opacity-90 active:scale-95 transition-all" href="#contact">Book a Table</a>
+</div>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative h-[884px] w-full flex items-center justify-center overflow-hidden" data-stitch-vh="h-[884px]===h-screen" id="home">
+<div class="absolute inset-0 z-0" data-alt="An atmospheric, cinematic wide shot of a high-end luxury restaurant interior at night. The lighting is low and warm, featuring golden ambient glows from designer pendant lights. Elegant dark wooden tables are set with crystal glassware and fine china. The aesthetic is deep charcoal and black with vibrant orange light accents, creating a moody, exclusive fine-dining vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJg62wf1XB_x0cACKiKKJM9Q2xZJPpyJouwsweMHv0SiagPLyKNQJ3uiocx8jpcRVozJIbrMB0XRsXyRrjK7Ec32TwqOm15uX___z05w-m49DbgJk_tpggCFAR5CGM12jChi6MW2EXiq4FLn9iLC8USYIAtC2YUWiBkWdXOot3DB7Ttj4fy4v7roV_C-Ks54Z6Hv_eFZBdnsE1LZ2SW5FcE8gOGJZLOCny0kmdU69Axr3xkhyBCca1WQ0hCvVS3-K8HDW861Py4mc')">
+<div class="absolute inset-0 bg-black/60"></div>
+</div>
+<div class="relative z-10 text-center px-gutter max-w-4xl reveal active">
+<h1 class="text-display-lg-mobile md:text-display-lg font-display-lg mb-4 text-white">Flavor Haven</h1>
+<p class="text-body-lg md:text-headline-sm font-body-lg mb-8 text-on-surface-variant max-w-2xl mx-auto italic">
+                Fresh Food, Great Taste, Memorable Moments
+            </p>
+<div class="flex flex-col sm:flex-row gap-stack-md justify-center">
+<a class="px-10 py-4 accent-gradient text-on-primary-container rounded-full font-headline-sm hover:scale-105 transition-transform shadow-lg shadow-primary/20" href="#menu">Explore Menu</a>
+<a class="px-10 py-4 border-2 border-white/30 text-white rounded-full font-headline-sm backdrop-blur-sm hover:bg-white/10 transition-all" href="#contact">Reservations</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+<span class="material-symbols-outlined text-primary text-4xl">keyboard_double_arrow_down</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="about">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="reveal active">
+<div class="relative rounded-xl overflow-hidden shadow-2xl group">
+<img class="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close-up shot of a professional chef in a dark modern kitchen, expertly plating a gourmet dish with precision. The lighting is dramatic, highlighting the steam rising from the food and the rich textures of fresh ingredients like micro-greens and vibrant sauces. The color palette is dominated by deep blacks and warm orange highlights from the kitchen pass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYFwb1dSy1WvCKd-MqgXrJGi-83_Flk3cD_zlc62UALrjvDQWijy-ExngTknbIrZuXrztsPLmo4iJ-FYJJ58kib9EG8z5r9mufWmdxDwy_-N4mc1OgpgYMoxhFu0PcBYDB4AHobep4nHeXJRpGF64PZdxN_0pCEcS-jcNapqPHUSZiIrRTEaA-5iQqwvrRmJU4ZPvZvXmrVYFGYmx4M_fPklAuuAoo5heXBPY1fjg9gVt3LFyTpZRXuXv-kAVI-pXhoipGMmnoY2Q">
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl"></div>
+</div>
+</div>
+<div class="reveal active">
+<span class="text-primary font-label-caps uppercase tracking-widest mb-4 block">Our Story</span>
+<h2 class="text-display-lg-mobile md:text-headline-md font-headline-md mb-6 text-on-background">Crafting Culinary Excellence</h2>
+<div class="space-y-6 text-body-lg text-on-surface-variant font-body-md">
+<p>At Flavor Haven, we believe that dining is more than just a meal; it's a sensory journey. Founded by visionaries who sought to blend traditional techniques with modern culinary artistry, our kitchen is a laboratory of taste.</p>
+<p>Every ingredient is hand-selected from local organic farms, ensuring that the journey from field to fork is as brief as it is flavorful. Our chefs bring decades of international experience to your table, creating dishes that are as visually stunning as they are delicious.</p>
+<p>Step into an atmosphere designed for connection. Whether it's an intimate date night or a grand celebration, our dark-luxe interiors and warm service provide the perfect backdrop for your most memorable moments.</p>
+</div>
+<div class="mt-10 grid grid-cols-3 gap-8">
+<div>
+<div class="text-headline-md font-headline-md text-primary">12+</div>
+<div class="text-label-caps text-on-surface-variant">Years Exp</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-primary">24</div>
+<div class="text-label-caps text-on-surface-variant">Signature Dishes</div>
+</div>
+<div>
+<div class="text-headline-md font-headline-md text-primary">100%</div>
+<div class="text-label-caps text-on-surface-variant">Organic</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-section-padding bg-surface-container-lowest" id="menu">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 reveal active">
+<span class="text-primary font-label-caps uppercase tracking-widest mb-4 block">Selection</span>
+<h2 class="text-display-lg-mobile md:text-headline-md font-headline-md text-on-background">Explore Our Menu</h2>
+</div>
+<!-- Menu Categories -->
+<div class="flex flex-wrap justify-center gap-4 mb-12 reveal active">
+<button class="menu-tab px-8 py-2 rounded-full font-label-caps bg-primary text-on-primary-container active">All</button>
+<button class="menu-tab px-8 py-2 rounded-full font-label-caps text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all">Pizza</button>
+<button class="menu-tab px-8 py-2 rounded-full font-label-caps text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all">Main Course</button>
+<button class="menu-tab px-8 py-2 rounded-full font-label-caps text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all">BBQ</button>
+<button class="menu-tab px-8 py-2 rounded-full font-label-caps text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all">Drinks</button>
+</div>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg reveal active">
+<!-- Menu Item 1 -->
+<div class="bg-surface-container overflow-hidden rounded-xl group inner-glow border border-white/5 transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A gourmet artisan pizza with a leopard-spotted charred crust, topped with fresh buffalo mozzarella, vibrant basil leaves, and high-quality prosciutto. The image is captured in a moody dark-luxe style with warm orange lighting reflecting off the olive oil. Minimalist and high-end food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6yNHobjAYxryIY_vQVjB9PRfAI9NIph8bRrf2i1Xchmf9oDPfwgXQeclm7oQyKNrGlTs7x7mOs-48JYtPkog96OjIZobWXopk48AAiWrrcxqJlRFhAjbANz-oG3bgicZHUKFfTrnfCuttv-vIWEHQdbkP52a9r58ki3G56lQsvderAVYufPd28px99bGjhF656irV8AoaL-_5mRN-WxcnRs2PNMxJawyHZSsPaK-MQPc4sZ0WRdMpjxZQYKKKgyn7l6IaABDqfzU">
+</div>
+<div class="p-stack-lg">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Truffle Marguerita</h3>
+<span class="text-primary font-headline-sm">$22.99</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">Hand-stretched dough, black truffle oil, fresh buffalo mozzarella, and basil.</p>
+<div class="flex justify-between items-center">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-label-caps">Chef's Choice</span>
+<button class="flex items-center gap-2 text-primary font-label-caps hover:gap-3 transition-all">
+                                Order Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 2 -->
+<div class="bg-surface-container overflow-hidden rounded-xl group inner-glow border border-white/5 transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A juicy, high-end wagyu beef burger stacked with caramelized onions, aged cheddar, and truffle aioli in a glossy brioche bun. The shot is dark and atmospheric, with golden lighting accentuating the texture of the meat and the melting cheese. Professional food styling on a black slate background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv4GOaaLCTMOi5pcenZ501XKsjub77wQRpW6meoUuKxcRZ8WG6vTwv0YWVIXwxDlQ11nMRh71XGrR4NAcPvisvNuJXOCCLtniFvnSGhu6HzWgBVDz_kjn1o7al7h3dPovWtlD2z_80GJpc2FvcAIKcj2qzRJeSzCDzZIAndD7FfsOr_euPGwldH1JVJ9XADWe4_5_sHDXqwOOzd4fTf_5mnUIM3-kEAGk_8I7mHsOBJfgoi99j9hBy9FWZZp70HCxBNMfgvwcB2_c">
+</div>
+<div class="p-stack-lg">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">The Haven Burger</h3>
+<span class="text-primary font-headline-sm">$18.50</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">Dry-aged beef, smoked provolone, caramelized balsamic onions, and brioche.</p>
+<div class="flex justify-between items-center">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-label-caps">Popular</span>
+<button class="flex items-center gap-2 text-primary font-label-caps hover:gap-3 transition-all">
+                                Order Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 3 -->
+<div class="bg-surface-container overflow-hidden rounded-xl group inner-glow border border-white/5 transition-all hover:shadow-2xl hover:shadow-primary/5">
+<div class="h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A decadent slow-cooked beef short rib served with a rich red wine reduction and creamy parsnip puree. The dish is garnished with micro-herbs. Dark-luxe aesthetic with soft golden spotlights on the succulent texture of the beef. Fine dining presentation on dark ceramic plate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWp0p16nQsO2qvLmNLEPch4MRoKP9b6NwKwVBUSzuK6czKq8_QNb38I0PZuojGWbKDv0HdfzZiOu-kQoSCMuH4i1AEI4iZOTXMfVVXZ2NqVNQ9EmcFrRlmJdQpfIHJ8G3USuNSgZN56Gfb3sqbXzyL_xXIIJxFHG661AoHNWerSMsp-cHCBlz6uslBntXeQBJEG1WO4UsCGpMDLtadVmnXosLv48iMJMQH4nVh168BtjHKKXeQXClGhCig4-PIlYaBaTBYwspS7p0">
+</div>
+<div class="p-stack-lg">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Slow-Braised Ribs</h3>
+<span class="text-primary font-headline-sm">$32.00</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6">12-hour braised short ribs, red wine reduction, and velvet potato purée.</p>
+<div class="flex justify-between items-center">
+<span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-label-caps">Gluten Free</span>
+<button class="flex items-center gap-2 text-primary font-label-caps hover:gap-3 transition-all">
+                                Order Now <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section class="py-section-padding px-gutter max-w-container-max mx-auto" id="gallery">
+<div class="text-center mb-16 reveal active">
+<span class="text-primary font-label-caps uppercase tracking-widest mb-4 block">Visuals</span>
+<h2 class="text-display-lg-mobile md:text-headline-md font-headline-md text-on-background">Atmosphere &amp; Art</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px] reveal active">
+<div class="col-span-2 row-span-2 overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Wide angle view of a modern luxury bar area with amber-lit bottles on dark shelves. People are blurred in the background, focusing on the sophisticated architecture and warm glow. Professional interior photography, dark-luxe style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCna2cvbOtx-CjDOIsh5bvDxpL6KbDKY7F-sgZqJZagXQNEKteTU8sE7GdlRhWvkjF6Ltc9I2ysw7hhCsxl1fkbIli6LbS_U26LtXYs0cSx1kHK9Pvm5U8YLxdKgffd2j1h4vva7ZEjftyBbaJ_JfJ_HlH6sEvcot0JfgPuqlCkxrI953pYSX_PfHOD3rvFSV1LicWP2GYxTvCRjfuD9ICJR607OyD1qZYlG5Gq3QKBH6zx_J9hTWrGYT4hSbHpsUSFzkuu4xuI0WY">
+</div>
+<div class="overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a vibrant craft cocktail with orange garnish and ice cubes, condensation on the glass. Dark background with golden bokeh light. Luxury beverage photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzBV8WRhv7FDPvmXUr_pctVS9cI7G3NdU8hY304Le5XK9JkEzd7HsF0QuUmE8Zb_8KjLCZf9kpvuI4MuUEKEWMls3TKRQ56IUj_zC3gRs9hiLCJo5uUS85SBzNOvT0Jc5N4qDBDMqFHziz9GptNaIlo3U6gNytN8cQhPblRMILDe_T9_4n8EsZTdbTyA2K78mGAIavhRcWBlWTuCzwU6IXMfnsZbxqeQAwYSU79QseHqcBUiJnPNHcgo_rtAMYS-3OZcapoVYSDGg">
+</div>
+<div class="overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of a chef's hands garnishing a dish with tweezers. Fine dining precision, moody kitchen lighting, warm orange and deep blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZMZvnuhyrmRAfizgrd65oU9PbhQV2GH46xgCb7qPSXQtZLt-TiyR3wcHB1kEsLjXGV0tjNbDFZCovrmqzApXHbtfT1km0vRmuMSDJmpmKpiaRHjxk9fVaj1hG-lwBORIFIHuqH_F4walfjLWV_5uCMRTrq9h5gHt0A-caxbFqw2k3Hz_IRQgYORmKNklIFLNDxRn3KyZRz3S2yisi1S4WCTW074LCb-ftMUuWagwxhKXOYDX8rqzK5vvCM2_GyIHtOyZJYAZvV-8">
+</div>
+<div class="col-span-2 overflow-hidden rounded-xl group">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A couple enjoying a meal at a candle-lit table. The background is a blurred high-end restaurant interior with golden lighting. Intimate and exclusive atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB6rHuUihJwoftUMstJjL1gA0_ujl-wLnuBnBamMIpW2v3p019TTER6us3EW5xyPqAhIBFi72B_TP2kRVlqIGa9qiElmPw98OhorzW18Afie-MHMFbiaq23a4Es8D479Uzoq8XHdep9y_F3HyxOqj8Lz8D67pO1ZJ04Pa7kMaWOhq5PVAiZ7u8TYJT0mPeWg-xsroGlW5bHXtaO76HV2QGTWF9okd-ZWjNyeWbTyzYDrP4kVrfjxjSJOJ266nW8AD2fzt3mz0GAuI">
+</div>
+</div>
+</section>
+<!-- Contact & Reservation Section -->
+<section class="py-section-padding bg-surface-container-low" id="contact">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Contact Form -->
+<div class="reveal active">
+<h2 class="text-headline-md font-headline-md mb-8 text-on-background">Book Your Table</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-2">Name</label>
+<input class="w-full bg-background border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:outline-none text-white transition-all" type="text">
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-2">Email</label>
+<input class="w-full bg-background border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:outline-none text-white transition-all" type="email">
+</div>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-2">Subject</label>
+<select class="w-full bg-background border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:outline-none text-white transition-all">
+<option>Table Reservation</option>
+<option>Event Inquiry</option>
+<option>Feedback</option>
+</select>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-2">Message</label>
+<textarea class="w-full bg-background border border-white/10 rounded-lg p-4 focus:ring-2 focus:ring-primary focus:outline-none text-white transition-all" rows="4"></textarea>
+</div>
+<button class="w-full py-4 accent-gradient text-on-primary-container font-headline-sm rounded-lg hover:opacity-90 transition-all shadow-xl shadow-primary/10" type="submit">Confirm Reservation</button>
+</form>
+</div>
+<!-- Info & Map -->
+<div class="reveal active">
+<h2 class="text-headline-md font-headline-md mb-8 text-on-background">Contact Information</h2>
+<div class="space-y-8 mb-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">location_on</span>
+<div>
+<h4 class="text-body-lg font-bold text-on-background">Location</h4>
+<p class="text-on-surface-variant font-body-md">123 Culinary Ave, Gastronomy District<br>Paki, NY 10001</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">schedule</span>
+<div>
+<h4 class="text-body-lg font-bold text-on-background">Hours</h4>
+<p class="text-on-surface-variant font-body-md">Mon - Thu: 5:00 PM - 11:00 PM<br>Fri - Sun: 12:00 PM - 12:00 AM</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">mail</span>
+<div>
+<h4 class="text-body-lg font-bold text-on-background">Connect</h4>
+<p class="text-on-surface-variant font-body-md">hello@flavorhaven.com<br>+1 (555) 123-4567</p>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="w-full h-64 rounded-xl overflow-hidden glass-panel border border-white/5 relative">
+<div class="absolute inset-0 grayscale opacity-40 hover:opacity-100 transition-opacity duration-700" data-location="New York" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkU_YkI6vRTk8jAqIKe3Fev3iVGhacikMQnJA6lUZ7EjQZ7fZY68npeQUdGTeEBUl8R8GtsaToUo5hJMyhUmNMRJcVbg-mZtDHPc0RHm2hkONUDL-JlkDlxSPcmXRUUla_ikW6w3r3Cgtj_WHEx0PngC5TDOYDczNOU8EoclMMZc8EydW7v5_bUNKpRNa4wrPk2QcAZWR8gKXbSn5T5iZ22JHswGpWpXgaASjhJz26KzZEpco8uvLfkuvYQdbTsv2StepntENUlUg')"></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary p-3 rounded-full animate-pulse">
+<span class="material-symbols-outlined text-white">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-section-padding border-t border-white/5">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-4 gap-stack-lg">
+<div class="md:col-span-2">
+<div class="text-headline-sm font-headline-md font-bold text-primary mb-6">Flavor Haven</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-sm">Crafting unforgettable dining experiences through passion, innovation, and the freshest ingredients sourced from local artisans.</p>
+<div class="flex gap-4 mt-8">
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-label-caps font-label-caps text-on-background mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#about">Our Story</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#menu">View Menu</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#contact">Reservations</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#gallery">Gallery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-caps font-label-caps text-on-background mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Careers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Feedback</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-caps font-label-caps text-on-surface-variant">© 2024 Flavor Haven. All rights reserved.</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Designed for excellence.</p>
+</div>
+</footer>
+<!-- Scroll to Top Button -->
+<button class="fixed bottom-8 right-8 w-12 h-12 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary rounded-full flex items-center justify-center transition-all duration-300 hover:bg-primary hover:text-on-primary z-50 opacity-100 visible" id="scrollToTop">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Reveal elements on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 500) {
+                scrollToTopBtn.classList.remove("opacity-0", "invisible");
+                scrollToTopBtn.classList.add("opacity-100", "visible");
+            } else {
+                scrollToTopBtn.classList.add("opacity-0", "invisible");
+                scrollToTopBtn.classList.remove("opacity-100", "visible");
+            }
+        });
+
+        scrollToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Simple active link highlighting on scroll
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("text-primary", "border-b-2", "border-primary", "pb-1");
+                link.classList.add("text-on-surface");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("text-primary", "border-b-2", "border-primary", "pb-1");
+                    link.classList.remove("text-on-surface");
+                }
+            });
+        });
+    </script>
+</body></html>
